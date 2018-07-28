@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flask</title>
+</head>
+<body>
+{% macro input() %}
+<input type="text" name="" value="" size="30">
+{% endmacro %}
+
+<h1>input1</h1>
+{{input()}}
+
+<h1>input2</h1>
+{{input()}}
+
+{% macro input2(name, value="请输入" ,size="30" ,type="text") %}
+<input type="{{type}}" value="{{value}}" name="{{name}}" size="{{size}}" >
+{% endmacro %}
+
+<h1>input2 1</h1>
+{{input2("itcast")}}
+<h1>input 2 2</h1>
+{{input2("python",type="password",size="40")}}
+
+<hr>
+
+{% import "macro_input.html" as m_input %}
+
+<h1>input3</h1>
+{{ m_input.input3("yl",size="12") }}
+
+<p></p>
+<p></p>
+<p></p>
+
+</body>
+</html>
